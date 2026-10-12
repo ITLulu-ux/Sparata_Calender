@@ -36,14 +36,14 @@ public class CalenderController {
         return calendarService.create(requestDto);
     }
 
-    @PutMapping("/{id}")
-    public String modifyCalender(@PathVariable Long id, @RequestBody CalendarRequestDto requestDto) {
-
+    @PatchMapping("/{id}")
+    public CalendarResponseDto modifyCalender(@PathVariable Long id, @RequestBody CalendarRequestDto requestDto) {
+        return calendarService.update(id, requestDto);
     }
 
     @DeleteMapping
     public String delete(@PathVariable Long id, @RequestBody CalendarRequestDto requestDto) {
-
+        return null;
     }
 
 }

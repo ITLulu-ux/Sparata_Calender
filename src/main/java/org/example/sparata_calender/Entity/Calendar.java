@@ -46,4 +46,13 @@ public class Calendar {
         this.writer = writer;
         this.password = password;
     }
+
+    public void update(String title, String writer) {
+        this.title = title;
+        this.writer = writer;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
