@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.sparata_calender.Dto.CalendarRequestDto;
 import org.example.sparata_calender.Dto.CalendarResponseDto;
 import org.example.sparata_calender.Service.CalendarService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,9 +42,13 @@ public class CalenderController {
         return calendarService.update(id, requestDto);
     }
 
-    @DeleteMapping
-    public String delete(@PathVariable Long id, @RequestBody CalendarRequestDto requestDto) {
-        return null;
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(
+            @PathVariable Long id,
+            @RequestBody CalendarRequestDto requestDto
+    ) {
+        calendarService.delete(id, requestDto);
+        return ResponseEntity.noContent().build();
     }
 
 }

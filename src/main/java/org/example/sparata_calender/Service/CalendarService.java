@@ -76,4 +76,17 @@ public class CalendarService {
 
         return new CalendarResponseDto(calendar);
     }
+
+    @Transactional
+    public void delete(Long id, CalendarRequestDto requestDto) {
+        Calendar calendar = calendarRepository.findById(id)
+                .orElseThrow(() ->
+                        new IllegalArgumentException("일정을 찾을 수 없습니다."));
+
+        if (!calendar.getPassword().equals(requestDto.getPassword())) {
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+        }
+
+        calendarRepository.delete(calendar);
+    }
 }
