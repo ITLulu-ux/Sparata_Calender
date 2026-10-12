@@ -6,6 +6,8 @@ import org.example.sparata_calender.Dto.CalendarResponseDto;
 import org.example.sparata_calender.Service.CalendarService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/schedules")
 @RequiredArgsConstructor
@@ -14,13 +16,17 @@ public class CalenderController {
     private final CalendarService calendarService;
 
     @GetMapping
-    public String showCalender(){
-
+    public List<CalendarResponseDto> showCalendar(
+            @RequestParam(required = false) String writer
+    ) {
+        return calendarService.findAll(writer);
     }
 
     @GetMapping("/{id}")
-    public String showCalender() {
-
+    public CalendarResponseDto showCalendarById(
+            @PathVariable Long id
+    ) {
+        return calendarService.findById(id);
     }
 
     @PostMapping
@@ -36,7 +42,8 @@ public class CalenderController {
     }
 
     @DeleteMapping
-    public String delete(@PathVariable Long id,
-                         @RequestBody CalendarRequestDto requestDto) {}
+    public String delete(@PathVariable Long id, @RequestBody CalendarRequestDto requestDto) {
+
+    }
 
 }
