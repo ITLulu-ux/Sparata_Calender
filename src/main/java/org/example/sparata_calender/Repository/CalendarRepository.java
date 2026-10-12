@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CalenderRepository extends CrudRepository<Calendar, Integer> {
+public interface CalendarRepository extends CrudRepository<Calendar, Integer> {
 }

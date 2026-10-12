@@ -6,7 +6,7 @@ import org.example.sparata_calender.Entity.Calendar;
 import java.time.LocalDateTime;
 
 @Getter
-public class CalenderResponseDto {
+public class CalendarResponseDto {
     private Long id;
     private String title;
     private String contents;
@@ -14,7 +14,7 @@ public class CalenderResponseDto {
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 
-    public CalenderResponseDto(Calendar calendar) {
+    public CalendarResponseDto(Calendar calendar) {
         this.id = calendar.getId();
         this.title = calendar.getTitle();
         this.contents = calendar.getContents();

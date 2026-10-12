@@ -6,15 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.EntityListeners;
 
+import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+@Getter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class Calender {
+public class Calendar {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
@@ -25,8 +27,23 @@ public class Calender {
     private String password;
 
     @CreatedDate
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
     private LocalDateTime modifiedAt;
+
+    protected Calendar() {
+    }
+
+    public Calendar(
+            String title,
+            String contents,
+            String writer,
+            String password
+    ) {
+        this.title = title;
+        this.contents = contents;
+        this.writer = writer;
+        this.password = password;
+    }
 }
