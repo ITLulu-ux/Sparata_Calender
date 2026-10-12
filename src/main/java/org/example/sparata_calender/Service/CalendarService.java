@@ -1,8 +1,8 @@
 package org.example.sparata_calender.Service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.sparata_calender.Dto.CalenderRequestDto;
-import org.example.sparata_calender.Dto.CalenderResponseDto;
+import org.example.sparata_calender.Dto.CalendarRequestDto;
+import org.example.sparata_calender.Dto.CalendarResponseDto;
 import org.example.sparata_calender.Entity.Calendar;
 import org.example.sparata_calender.Repository.CalendarRepository;
 import org.springframework.stereotype.Service;
@@ -13,8 +13,8 @@ public class CalendarService {
 
     private final CalendarRepository calendarRepository;
 
-    public CalenderResponseDto create(
-            CalenderRequestDto requestDto
+    public CalendarResponseDto create(
+            CalendarRequestDto requestDto
     ) {
         Calendar calendar = new Calendar(
                 requestDto.getTitle(),
@@ -25,6 +25,6 @@ public class CalendarService {
 
         Calendar savedCalendar = calendarRepository.save(calendar);
 
-        return new CalenderResponseDto(savedCalendar);
+        return new CalendarResponseDto(savedCalendar);
     }
 }
