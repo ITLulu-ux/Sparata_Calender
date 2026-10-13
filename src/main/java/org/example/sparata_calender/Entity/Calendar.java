@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 public class Calendar {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -51,8 +51,5 @@ public class Calendar {
         this.title = title;
         this.writer = writer;
     }
-
-    public String getPassword() {
-        return password;
-    }
 }
+
