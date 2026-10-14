@@ -171,8 +171,12 @@
 - **MVC 흐름도:** Postman 요청부터 Controller, Service, Repository, 데이터베이스 및 응답까지의 처리 흐름
 
 
+
 # ERD
-![일정관리 ERD](./images/일정관리_ERD.jpg)
+
+![일정관리 ERD](./images/%5B내일배움캠프%5D%20일정관리앱%20ERD%20%281%29.jpg)
 
 # MVC 흐름도
-![일정관리 MVC 흐름도](./images/일정관리_MVC_흐름.jpg)
+
+![일정관리 MVC 흐름도](./images/%5B내일배움캠프%5D%20일정관리%20MVC%20흐름.jpg)
+
