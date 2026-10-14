@@ -172,7 +172,7 @@
 
 
 # ERD
-![[내일배움캠프] 일정관리앱 ERD (1).jpg](../../Downloads/%5B%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%BA%A0%ED%94%84%5D%20%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC%EC%95%B1%20ERD%20%281%29.jpg)
+(./images/일정관리_ERD.jpg)
 
 # MVC 흐름도
-![[내일배움캠프] 일정관리 MVC 흐름.jpg](../../Downloads/%5B%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%BA%A0%ED%94%84%5D%20%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC%20MVC%20%ED%9D%90%EB%A6%84.jpg)
+![[내일배움캠프] 일정관리 MVC 흐름.jpg](./images/일정관리_MVC_흐름.jpg)
