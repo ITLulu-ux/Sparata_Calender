@@ -6,6 +6,7 @@ import org.example.sparata_calender.Dto.CommentResponseDto;
 import org.example.sparata_calender.Service.CommentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/schedules")
@@ -18,7 +19,7 @@ public class CommentController {
     @ResponseStatus(HttpStatus.CREATED)
     public CommentResponseDto addComment(
             @PathVariable Long scheduleId,
-            @RequestBody CommentRequestDto requestDto
+            @Valid @RequestBody CommentRequestDto requestDto
     ) {
         return commentService.create(scheduleId, requestDto);
     }

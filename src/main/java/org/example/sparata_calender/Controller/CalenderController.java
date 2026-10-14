@@ -6,6 +6,7 @@ import org.example.sparata_calender.Dto.CalendarResponseDto;
 import org.example.sparata_calender.Service.CalendarService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -32,23 +33,24 @@ public class CalenderController {
 
     @PostMapping
     public CalendarResponseDto addCalendar(
-            @RequestBody CalendarRequestDto requestDto
+            @Valid @RequestBody CalendarRequestDto requestDto
     ) {
         return calendarService.create(requestDto);
     }
 
     @PatchMapping("/{id}")
-    public CalendarResponseDto modifyCalender(@PathVariable Long id, @RequestBody CalendarRequestDto requestDto) {
+    public CalendarResponseDto modifyCalender(@PathVariable Long id, @Valid @RequestBody CalendarRequestDto requestDto) {
         return calendarService.update(id, requestDto);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(
             @PathVariable Long id,
-            @RequestBody CalendarRequestDto requestDto
+            @Valid @RequestBody CalendarRequestDto requestDto
     ) {
         calendarService.delete(id, requestDto);
         return ResponseEntity.noContent().build();
     }
+
 
 }
