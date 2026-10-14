@@ -172,7 +172,7 @@
 
 
 # ERD
-(./images/일정관리_ERD.jpg)
+![일정관리 ERD](./images/일정관리_ERD.jpg)
 
 # MVC 흐름도
-![[내일배움캠프] 일정관리 MVC 흐름.jpg](./images/일정관리_MVC_흐름.jpg)
+![일정관리 MVC 흐름도](./images/일정관리_MVC_흐름.jpg)
