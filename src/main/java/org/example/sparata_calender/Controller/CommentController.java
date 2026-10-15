@@ -15,6 +15,7 @@ public class CommentController {
 
     private final CommentService commentService;
 
+    // 댓글 수정
     @PostMapping("/{scheduleId}/comments")
     @ResponseStatus(HttpStatus.CREATED)
     public CommentResponseDto addComment(

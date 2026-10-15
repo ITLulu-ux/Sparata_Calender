@@ -17,6 +17,7 @@ public class CalenderController {
 
     private final CalendarService calendarService;
 
+    // 일정 전체 조회
     @GetMapping
     public List<CalendarResponseDto> showCalendar(
             @RequestParam(required = false) String writer
@@ -24,6 +25,7 @@ public class CalenderController {
         return calendarService.findAll(writer);
     }
 
+    // id 별로 조회
     @GetMapping("/{id}")
     public CalendarResponseDto showCalendarById(
             @PathVariable Long id
@@ -31,6 +33,7 @@ public class CalenderController {
         return calendarService.findById(id);
     }
 
+    // 일정 생성
     @PostMapping
     public CalendarResponseDto addCalendar(
             @Valid @RequestBody CalendarRequestDto requestDto
@@ -38,11 +41,13 @@ public class CalenderController {
         return calendarService.create(requestDto);
     }
 
+    // id로 부분 수정
     @PatchMapping("/{id}")
     public CalendarResponseDto modifyCalender(@PathVariable Long id, @Valid @RequestBody CalendarRequestDto requestDto) {
         return calendarService.update(id, requestDto);
     }
 
+    // 일정 삭제
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(
             @PathVariable Long id,

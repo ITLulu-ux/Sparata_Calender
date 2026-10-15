@@ -14,12 +14,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor    // 생성자 자동 생성
 public class CalendarService {
 
     private final CalendarRepository calendarRepository;
     private final CommentRepository commentRepository;
 
+    // 새로운 일정 생성하고 저장
     public CalendarResponseDto create(
             CalendarRequestDto requestDto
     ) {
@@ -35,6 +36,7 @@ public class CalendarService {
         return new CalendarResponseDto(savedCalendar, List.of());
     }
 
+    // 모두 조회
     public List<CalendarResponseDto> findAll(String writer) {
         List<Calendar> calendars;
 
@@ -53,6 +55,7 @@ public class CalendarService {
                 .toList();
     }
 
+    // id로 조회
     public CalendarResponseDto findById(Long id) {
         Calendar calendar = calendarRepository.findById(id)
                 .orElseThrow(() ->
@@ -69,6 +72,8 @@ public class CalendarService {
         return new CalendarResponseDto(calendar, comments);
     }
 
+    // 트랜잭션 동기화
+    // 수정
     @Transactional
     public CalendarResponseDto update(
             Long id,
@@ -94,6 +99,7 @@ public class CalendarService {
         return new CalendarResponseDto(calendar, List.of());
     }
 
+    // 삭제
     @Transactional
     public void delete(
             Long id,
